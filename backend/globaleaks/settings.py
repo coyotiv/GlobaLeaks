@@ -89,7 +89,7 @@ class SettingsClass(object, metaclass=Singleton):
         self.files_path = os.path.abspath(os.path.join(self.working_path, 'files'))
         self.attachments_path = os.path.abspath(os.path.join(self.working_path, 'attachments'))
         self.tmp_path = os.path.abspath(os.path.join(self.working_path, 'tmp'))
-        self.tor_control = os.path.abspath(os.path.join(self.tmp_path, 'tor_control'))
+        self.tor_control = '/tmp/tor_control'
 
         self.db_file_path = os.path.abspath(os.path.join(self.working_path, 'globaleaks.db'))
 
