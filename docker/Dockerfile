@@ -17,7 +17,9 @@ RUN apt-get update -q && \
 EXPOSE 8080
 EXPOSE 8443
 
-RUN sed -i "s|self.tor_control = os.path.abspath(os.path.join(self.tmp_path, 'tor_control'))|self.tor_control = 'var/tor_control'|g" /usr/lib/python3/dist-packages/globaleaks/settings.py
+RUN sed -i "s|self.tor_control = os.path.abspath(os.path.join(self.tmp_path, 'tor_control'))|self.tor_control = '/tmp/tor_control'|g" /usr/lib/python3/dist-packages/globaleaks/settings.py
+
+RUN touch /tmp/tor_control
 
 USER globaleaks
 
